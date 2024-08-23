@@ -1,4 +1,4 @@
-# Excel Data Processing and GPT Integration
+# Large language model-assisted citation screening
 
 This project demonstrates how to load data from an Excel file, generate screening texts based on specific criteria, and integrate with OpenAI's GPT-4o API, Alphabet's Gemini 1.5 Pro, and Anthropic's  Claude 3.5 Sonnet for automated text processing.
 
