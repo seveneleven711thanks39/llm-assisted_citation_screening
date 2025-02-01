@@ -33,7 +33,7 @@ This project demonstrates how to load data from an Excel file, generate screenin
 
 ## Data availability
 
-The datasets used and analyzed in our study are stored in the repository. Each file is locked with a passcode. We can share the passcode to confirm the reproducibility of the result or to conduct the further research upon the request. 
+The datasets used and analyzed in our study are stored in the repository (CQ1_data.csv, CQ2_data.csv, CQ3_data.csv, CQ4_data.csv, CQ5_data.csv, and reference_standard.xlsx). Each file is locked with a passcode. We can share the passcode to confirm the reproducibility of the result or to conduct the further research upon the request. 
 
 ## Contributing
 
