@@ -37,7 +37,7 @@ This project demonstrates how to load data from an Excel file, generate screenin
 
 ### Example Usage
 
-As an example, you can run the scripts using the sample file and an Alphabet API key at no cost (charges may apply if you exceed the free usage limit) by following these steps
+You can run the scripts using the sample file and an Alphabet API key at no cost (charges may apply if you exceed the free usage limit) by following these steps
 1. Place the `sample_data.xlsx` file in your working directory. 
 2. Set your an Alphabet API key in `gemini_integration.py`.
 3. Run `run_example.py`
