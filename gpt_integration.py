@@ -5,37 +5,33 @@
 from openai import OpenAI
 import openpyxl
 
-# Set the GPT-4oAPI key
-client = OpenAI(
-    # defaults to os.environ.get("OPENAI_API_KEY")
-    api_key="Your api_key",
-)
+def runGPT4o():
+    # Set the GPT-4o API key
+    client = OpenAI(api_key="xxxxxxxxxxxxxxxxxxxxxxxx")
 
-# Read an Excel file
-workbook = openpyxl.load_workbook("Path to your file")
-sheet = workbook.active
+    # Read an Excel file
+    workbook = openpyxl.load_workbook("sample_data.xlsx")
+    sheet = workbook.active
 
-# Apply the range of the row and column
-start_row = "number"
-end_row = "number"
-question_column = "number"
-answer_column = "number"
+    # Apply the range of the row and column
+    start_row = 1
+    end_row = 15
+    question_column = 23
+    answer_column = 24
 
-# Repeat the execution of the command 
-for row in range(start_row, end_row + 1):
-    question = sheet.cell(row=row, column=question_column).value
+    # Repeat the execution of the command 
+    for row in range(start_row, end_row + 1):
+        print(row)
+        question = sheet.cell(row=row, column=question_column).value
+        if question:
+            # Answer the question using the GPT-4o API
+            response = client.chat.completions.create(
+                model="gpt-4o-2024-05-13",
+                messages=[{"role": "user", "content": question}]
+            )
+            answer = response.choices[0].message.content
+            # Write an answer next to the cell
+            sheet.cell(row=row, column=answer_column).value = answer
 
-    if question:
-        # Answer the question using the GPT-4o API
-        response = client.chat.completions.create(
-        model="gpt-4o-2024-05-13",
-        messages=[{"role": "system", "content": question}]
-    )
-
-        answer = response.choices[0].message.content
-
-        # Write an answer next to the cell
-        sheet.cell(row=row, column=answer_column).value = answer
-
-# Save the edited Excel file
-workbook.save("Path to your file")
+    # Save the edited Excel file
+    workbook.save("sample_data.xlsx")
