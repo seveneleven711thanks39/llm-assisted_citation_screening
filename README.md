@@ -31,8 +31,8 @@ This project demonstrates how to load data from an Excel file, generate screenin
 2. `python screening_text_generator.py`
 3. `python gpt_integration.py`, `gemini_integration.py`, `claude_integration.py`, or `llama_integration.py`.
 
-You can run the scripts using the sample file and An Alphabet API key without charges (you will be chargeds if using multiple requests above the limited usage) as follows.
-1. Store the `sample_data.xlsx` file in your directory. 
+You can run the scripts using the sample file and an Alphabet API key at no cost (charges may apply if you exceed the free usage limit) by following these steps
+1. Place the `sample_data.xlsx` file in your working directory. 
 2. Set your an Alphabet API key in `gemini_integration.py`.
 3. Run `run_example.py`
 
