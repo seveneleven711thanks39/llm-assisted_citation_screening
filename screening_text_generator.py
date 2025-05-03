@@ -1,5 +1,7 @@
-#!/usr/bin/env python
 # coding: utf-8
+
+from data_loader import df 
+import pandas as pd
 
 # Define a function to create the 'screening' text
 def create_screening_text(row):
@@ -28,8 +30,8 @@ def create_screening_text(row):
         screening_text += f"Abstract: {row['abstract']}\n\n"
     return screening_text
 
+def append_question():
 # Apply the function to each row
-df['screening'] = df.apply(create_screening_text, axis=1)
-
+    df['screening'] = df.apply(create_screening_text, axis=1)
 # Execute the script to save the DataFrame to an Excel file
-df.to_excel("Path to your file")
+    df.to_excel("sample_data.xlsx")
