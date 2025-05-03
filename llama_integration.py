@@ -5,36 +5,34 @@
 import openpyxl
 from huggingface_hub import InferenceClient
 
-# Set the Hugging face API key
-client = InferenceClient(
-    api_key="Your api_key",
-)
+def runLlamaHF():
+    # Set the Hugging Face API key
+    client = InferenceClient(api_key="xxxxxxxxxxxxxxxxxxxxxxxx")
 
-# Read an Excel file
-workbook = openpyxl.load_workbook("Path to your file")
-sheet = workbook.active
+    # Read an Excel file
+    workbook = openpyxl.load_workbook("sample_data.xlsx")
+    sheet = workbook.active
 
-# Apply the range of the row and column
-start_row = "number"
-end_row = "number"
-question_column = "number"
-answer_column = "number"
+    # Apply the range of the row and column
+    start_row = 1
+    end_row = 15
+    question_column = 23
+    answer_column = 24
 
-# Repeat the execution of the command 
-for row in range(start_row, end_row + 1):
-    question = sheet.cell(row=row, column=question_column).value
+    # Repeat the execution of the command 
+    for row in range(start_row, end_row + 1):
+        print(row)
+        question = sheet.cell(row=row, column=question_column).value
+        if question:
+            # Answer the question using Hugging Face Inference API (LLaMA)
+            answer = client.text_generation(
+                prompt=question,
+                model="meta-llama/Meta-Llama-3-70B-Instruct",
+                max_new_tokens=1024,
+                temperature=0.7
+            )
+            # Write an answer next to the cell
+            sheet.cell(row=row, column=answer_column).value = answer
 
-    if question:
-        # Answer the question using the GPT-4o API
-        response = client.chat.completions.create(
-        model="meta-llama/Llama-3.3-70B-Instruct",
-        messages=[{"role": "system", "content": question}]
-    )
-
-        answer = response.choices[0].message.content
-
-        # Write an answer next to the cell
-        sheet.cell(row=row, column=answer_column).value = answer
-
-# Save the edited Excel file
-workbook.save("Path to your file")
+    # Save the edited Excel file
+    workbook.save("sample_data.xlsx")
