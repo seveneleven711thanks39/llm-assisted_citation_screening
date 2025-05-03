@@ -10,7 +10,7 @@ This project demonstrates how to load data from an Excel file, generate screenin
 
 ## Prerequisites
 
-- Python 3.x
+- Python 3.x (Python's virtual environment or (mini)conda)
 - An OpenAI API key with access to GPT-4o.
 - An Alphabet API key with access to Gemini 1.5 Pro. 
 - An Anthropic API key with access to Claude 3.5 Sonnet.
@@ -30,10 +30,16 @@ This project demonstrates how to load data from an Excel file, generate screenin
 1. `python data_loader.py`
 2. `python screening_text_generator.py`
 3. `python gpt_integration.py`, `gemini_integration.py`, `claude_integration.py`, or `llama_integration.py`.
+4. `run_example.py`
+
+You can run the scripts using the sample file and An Alphabet API key without charges (you will be chargeds if using multiple requests above the limited usage) as follows.
+1. Store `sample_data.xlsx` file in your directory. 
+2. Set your an Alphabet API key in `gemini_integration.py`.
+3. Run `run_example.py`
 
 ## Data availability
 
-The datasets used and analyzed in our study are stored in the repository (CQ1_data.csv, CQ2_data.csv, CQ3_data.csv, CQ4_data.csv, CQ5_data.csv, and reference_standard.xlsx). Each file is locked with a passcode. We can share the passcode to confirm the reproducibility of the result or to conduct the further research upon the request. 
+The datasets used and analyzed in our study are stored in the repository (CQ1_data.csv, CQ2_data.csv, CQ3_data.csv, CQ4_data.csv, CQ5_data.csv, and reference_standard.xlsx). Each file is locked with a passcode "oami2025". 
 
 ## Contributing
 
