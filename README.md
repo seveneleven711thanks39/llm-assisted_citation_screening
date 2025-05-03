@@ -26,15 +26,15 @@ This project demonstrates how to load data from an Excel file, generate screenin
 - Update `data_loader.py` with your Excel file's directory and name. 
 - Define your screening criteria in `screening_text_generator.py`.
 - Set your API keys as needed:
-  -OpenAI API in `gpt_integration.py`
-  -Alphabet API key in `gemini_integration.py`
-  -Anthropic API key in `claude_integration.py`
-  -Hugging face API key in `llama_integration.py`.
-　 Alternatively, you can download LLaMA 3.3 70B locally and configure your own environment for offline inference.
+  - OpenAI API in `gpt_integration.py`
+  - Alphabet API key in `gemini_integration.py`
+  - Anthropic API key in `claude_integration.py`
+  - Hugging face API key in `llama_integration.py`.
+　  Alternatively, you can download LLaMA 3.3 70B locally and configure your own environment for offline inference.
 - Run the scripts in the following order:
-  -`python data_loader.py`
-  -`python screening_text_generator.py`
-  -`python gpt_integration.py`, `gemini_integration.py`, `claude_integration.py`, or `llama_integration.py`.
+  - `python data_loader.py`
+  - `python screening_text_generator.py`
+  - `python gpt_integration.py`, `gemini_integration.py`, `claude_integration.py`, or `llama_integration.py`.
 
 You can run the scripts using the sample file and an Alphabet API key at no cost (charges may apply if you exceed the free usage limit) by following these steps
 1. Place the `sample_data.xlsx` file in your working directory. 
